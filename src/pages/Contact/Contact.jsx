@@ -1,8 +1,12 @@
 import React from "react";
+import ContactHero from "./components/ContactHero";
+import ContactSection from "./components/ContactSection";
 
 const Contact = () => {
-  return <div>  
-    Get in touch with us through the Contact Page</div>;
+  return <>
+    <ContactHero />
+    <ContactSection />
+    </>;
 };
 
 export default Contact;

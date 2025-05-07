@@ -84,7 +84,7 @@
     transition: background 0.3s ease;
 }
 
-.arrow:hover {
+.testimonial-slider .arrow:hover {
     background: var(--sub);
     color: var(--bg);
 }

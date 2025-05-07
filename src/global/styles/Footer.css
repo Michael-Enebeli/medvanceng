@@ -17,6 +17,7 @@
   color: var(--main);
   padding-left: 0.8rem;
   margin: 2rem 0 1rem 0;
+  width: 100%;
 }
 
 #footer h2 span {
@@ -31,6 +32,7 @@
   font-size: 1.2rem;
   margin: 2rem 0 1rem 0;
   color: white;
+  width: 100%;
 }
 
 #footer nav ul {
