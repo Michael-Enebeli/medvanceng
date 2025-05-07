@@ -1,0 +1,119 @@
+aside {
+    position: fixed;
+    top: 0;
+    transform: translateX(-100%);
+    width: 100vw;
+    height: 100vh;
+    background: var(--main);
+    transition: all 0.5s ease;
+    z-index: 1000;
+    overflow: hidden;
+    padding-bottom: 200px;
+}
+
+@media (min-width: 1024px) {
+    aside {
+        display: none;
+    }
+}
+
+aside.open {
+    transform: translateX(0);
+}
+
+
+aside button {
+    font-size: 3rem;
+    background: none;
+    border: none;
+    color: #fff;
+    position: absolute;
+    top: 30px;
+    right: 50px;
+}
+
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 100px;
+}
+
+.sidebar-links li {
+    padding: 15px 30px;
+    text-align: center;
+    transition: all 0.4s ease;
+
+}
+
+.sidebar-links a {
+    color: var(--bg);
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
+    padding: 10px;
+    transition: color 0.3s;
+    cursor: default;
+    border-radius: 25px;
+}
+
+.sidebar-links li a.active {
+    color: var(--sub);
+    font-weight: bold;
+    pointer-events: none;
+}
+
+
+.sidebar-links a:hover {
+    color: var(--sub);
+}
+
+aside .authentication {
+    padding: 10px 30px;
+    text-align: center;
+    margin-top: 12.5vh;
+    list-style: none;
+}
+
+aside .authentication li {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    z-index: 20;
+    margin-top: 20px;
+    cursor: none;
+}
+
+aside .authentication li a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+    cursor: none;
+    color: var(--bg);
+    font-weight: bold;
+    padding: 10px 2px;
+    border-radius: 25px;
+}
+
+aside .authentication li:nth-child(2) a {
+    background: var(--sub);
+    color: var(--bg);
+    display: block;
+    font-weight: normal;
+    transition: all 0.3s ease;
+}
+
+aside .authentication li a:hover {
+    color: var(--sub);
+}
+
+aside .authentication li:nth-child(2) a:hover {
+    background: var(--main);
+    color: var(--bg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .sidebar-links a,
+    aside button,
+    aside .authentication li a {
+        cursor: pointer;
+    }
+}

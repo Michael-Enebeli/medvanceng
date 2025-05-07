@@ -1,0 +1,126 @@
+#signUp {
+    font-family: 'Poppins', sans-serif;
+}
+
+#signUp {
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media (min-width: 720px) {
+    #signUp {
+        background: url("/images/login-bg.jpg") no-repeat center center fixed;
+        background-size: cover;
+    }
+}
+
+#signUp header {
+    position: absolute;
+    top: 10px;
+    left: 4.5vw;
+}
+
+#signUp header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+
+#signUp h1 span {
+    color: var(--sub);
+}
+
+#signUp header a {
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+  }
+  
+  #signUp header a:hover {
+    text-decoration: underline;
+    color: var(--text);
+  }
+  
+#signUp main {
+    display: block;
+    padding: 20px;
+    max-width: 400px;
+    text-align: center;
+    background-color: var(--bg);
+}
+
+#signUp main h2 {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+#signUp p {
+    font-size: 0.8rem;
+    max-width: 600px;
+    margin: 15px auto 30px;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+#signUp button {
+    padding: 12px 80px;
+    font-size: 0.9rem;
+    border-radius: 24px;
+    border: none;
+    margin: 12px 10px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+#signUp button:first-of-type {
+    background-color: var(--sub);
+    color: #fff;
+}
+
+#signUp button:first-of-type:hover {
+    background: var(--main);
+    transform: scale(1.05);
+}
+
+#signUp button:last-of-type {
+    background-color: var(--bg);
+    padding: 12px 50px;
+    color: var(--sub);
+    border: 1px solid #E11584;
+}
+
+#signUp button:last-of-type:hover {
+    background: var(--main);
+    color: var(--bg);
+    transform: scale(1.05);
+    border: none;
+}
+
+#signUp a {
+    color: #0077cc;
+    text-decoration: underline;
+    font-weight: 500;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+#signUp a:hover {
+    transform: scale(1.05);
+    color: var(--sub);
+    text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    #signUp button,
+    #signUp a {
+        cursor: pointer;
+    }
+}

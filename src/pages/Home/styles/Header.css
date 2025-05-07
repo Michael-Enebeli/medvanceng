@@ -1,0 +1,124 @@
+#home {
+    background: linear-gradient(180deg, rgba(242, 242, 242, 0.5) 37.94%, rgba(252, 232, 243, 0.18) 100%);
+    background-color: #f0f4fa;
+    margin-top: 10px;
+}
+
+.bg-wrapper {
+    background-image: url('/images/mobile-hero (2).png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 70% 150px;
+    min-height: 100vh;
+}
+
+.hero {
+    padding: 50px 1.4rem 15% 1.4rem;
+    text-align: center;
+}
+
+@media (min-width: 650px) {
+    .bg-wrapper {
+        min-height: 650px;
+        background-size: 45%;
+        background-position: 85% 60%;
+    }
+
+    .hero {
+        max-width: 800px;
+        padding: 6.5% 5rem 5% 10%;
+        text-align: left;
+    }
+}
+
+.hero div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(205, 206, 209, 0.5);
+    border-radius: 10px;
+    padding: 5px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+
+@media (min-width: 650px) {
+    .hero div {
+        width: 310px;
+    }
+}
+
+.hero .sun-icon {
+    width: 25px;
+    height: 25px;
+    transform: scale(0.75);
+}
+
+.hero svg+span {
+    font-size: 0.7rem;
+    color: var(--main);
+    white-space: nowrap;
+}
+
+header h1 {
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: var(--text);
+}
+
+@media (min-width: 650px) {
+    header h1 {
+        font-size: 3rem;
+        width: 100%;
+    }
+}
+
+header h1 span {
+    color: var(--sub)
+}
+
+.hero p {
+    padding-right: 2%;
+    margin-bottom: 20px;
+    font-size: .83rem;
+    text-align: justify;
+    text-align-last: center;
+    font-weight: 500;
+    width: 100%;
+}
+
+@media (min-width: 650px) {
+    .hero p {
+        margin: 20px auto;
+        font-size: .99rem;
+        text-align-last: auto;
+    }
+}
+
+.hero button {
+    padding: .85rem 3rem;
+    font-size: 0.85rem;
+    border: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    background-color: var(--sub);
+    color: var(--bg);
+    font-weight: bold;
+}
+
+.hero button:hover {
+    background: var(--main);
+    transform: scale(1.05);
+}
+
+.hero button i {
+    margin-left: 10px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .hero button {
+        cursor: pointer;
+    }
+}

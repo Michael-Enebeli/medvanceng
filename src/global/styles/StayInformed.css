@@ -1,0 +1,84 @@
+.stay-wrapper {
+    width: 100%;
+    background-color: #3d5c65;
+    padding: 10px 20px;
+    background-image:
+        url('/images/Topology-2.png'),
+        url('/images/Topology-2.png');
+    height: 56vh;
+    max-height: 600px;
+    background-repeat: no-repeat, no-repeat;
+    background-size: contain, contain;
+    background-position: left center, right bottom;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.stay-wrapper h2 {
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--bg);
+    margin-bottom: 1.25rem;
+    white-space: nowrap;
+    padding: 0 20px;
+}
+
+.stay-wrapper p {
+    padding: 0 10px;
+    font-size: 0.9rem;
+    color: var(--bg);
+    max-width: 500px;
+    margin: 10px auto;
+}
+
+.stay-wrapper form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    min-width: 70vw;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.stay-wrapper input {
+    padding: 16px 20px;
+    width: 65%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-size: 0.8rem;
+    color: var(--text);
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.stay-wrapper input:focus {
+    outline: none;
+}
+
+.stay-wrapper button {
+    padding: 1rem 8%;
+    font-weight: 500;
+    color: var(--bg);
+    background: var(--text);
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.stay-wrapper span {
+    margin-top: 10px;
+    font-size: 0.875rem;
+    color:rgb(253, 179, 166); 
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .stay-wrapper button {
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,76 @@
+.physio-container {
+    width: 100%;
+    height: 70vh;
+    max-height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('/images/physiotherapy-img.png') no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    padding: 0 1rem;
+    color: var(--bg);
+    position: relative;
+}
+
+@media (min-width: 720px) {
+    .physio-container {
+        height: 70vw;
+        max-height: 900px;
+        background: url('/images/physiot.png') no-repeat center center;
+    }
+}
+
+.physio-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+
+.physio-container section {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.physio-container section h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    max-width: 900px;
+}
+
+.physio-container section p {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+
+.physio-container section button {
+    padding: .85rem 15%;
+    font-size: 0.85rem;
+    border: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    background-color: var(--sub);
+    color: var(--bg);
+    width: fit-content;
+    margin: 10px auto;
+    font-weight: bold;
+}
+
+
+.physio-container section button:hover {
+    background: var(--main);
+    transform: scale(1.05);
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+    .physio-container section button {
+        cursor: pointer;
+    }
+}

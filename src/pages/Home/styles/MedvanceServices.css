@@ -1,0 +1,85 @@
+.medvance-main {
+    width: 100%;
+    padding: 4rem 1rem;
+}
+
+.medvance-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.medvance-header span {
+    display: inline-block;
+    padding: 5px 15px;
+    border: 1px solid var(--sub);
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    color: var(--sub);
+    margin-bottom: 1rem;
+}
+
+.services-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background-color: #fff0f5;
+    border: 1px solid #f8bbd0;
+    border-radius: 1rem;
+    width: 100%;
+    padding: 2rem 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon-wrapper {
+    background: #F6B6D9;
+    border-radius: 50%;
+    display: inline-flex;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.icon-wrapper img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.text-content h3 {
+    font-size: 1.25rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+.text-content p {
+    color: var(--text);
+    font-size: 0.85rem;
+}
+
+.last-two-wrapper {
+    margin: 10px auto;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+@media (min-width: 800px) {
+    .services-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .last-two-wrapper {
+        grid-column: 1 / -1;
+        display: flex;
+        max-width: 700px;
+        justify-content: center;
+        flex-direction: row;
+        margin: 10px auto;
+        gap: 2rem;
+    }
+}

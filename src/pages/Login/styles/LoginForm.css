@@ -1,0 +1,281 @@
+#login {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    background-color: var(--bg);
+}
+
+
+@media (min-width: 720px) {
+    #login {
+        background: url("/images/login-bg.jpg") no-repeat center center fixed;
+        background-size: cover;
+    }
+}
+#login header {
+    position: absolute;
+    top: 10px;
+    left: 4.5vw;
+}
+
+#login header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#login header a {
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+}
+
+#login header a:hover {
+    text-decoration: underline;
+    color: var(--text);
+}
+
+#login header h1 span {
+    color: var(--sub);
+}
+
+#login .login-container {
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--bg);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#login h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+#login .input-group {
+    position: relative;
+    margin-bottom: 1.2rem;
+}
+
+#login input[type="email"],
+#login input[type="password"],
+#login input[type="text"] {
+    width: 100%;
+    padding: 0.8rem 2.5rem 0.8rem 1.2rem;
+    border: 1px solid rgba(43, 43, 43, 0.25);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+#login input[type="email"]:focus,
+#login input[type="password"]:focus,
+#login input[type="text"]:focus {
+    outline: none;
+    border: 2px solid var(--sub);
+}
+
+#login .input-group input::placeholder {
+    font-size: 0.8rem;
+    color: var(--text);
+    opacity: 0.7;
+    font-family: "Poppins", sans-serif;
+}
+
+#login .input-group i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: none;
+    color: var(--sub);
+    padding: 10px;
+}
+
+#login .error-message {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.6rem;
+}
+
+#login .form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    font-size: 0.8rem;
+}
+
+#login .form-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    opacity: 0.75;
+}
+
+#login .form-options a {
+    text-decoration: none;
+    color: #0077cc;
+    cursor: none;
+    transition: all 0.3s ease;
+}
+
+#login button {
+    width: 100%;
+    padding: 0.85rem;
+    background-color: var(--sub);
+    color: var(--bg);
+    border: none;
+    border-radius: 24px;
+    font-size: 0.9rem;
+    cursor: none;
+    transition: all 0.3s ease;
+}
+
+#login button:disabled {
+    background-color: var(--sub);
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+#login button:hover:enabled {
+    background: var(--main);
+    transform: scale(1.05);
+}
+
+#login button i {
+    margin-right: 5px;
+}
+
+
+#login input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--text);
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    opacity: 0.65;
+    margin-right: 2px;
+}
+
+#login input[type="checkbox"]:checked {
+    background-color: var(--sub);
+    border-color: var(--sub);
+    opacity: 1;
+}
+
+#login input[type="checkbox"]:checked::after {
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+
+#login .divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 25px 0;
+}
+
+#login .divider::before,
+#login .divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+}
+
+#login .divider::before {
+    margin-right: 10px;
+}
+
+#login .divider::after {
+    margin-left: 10px;
+}
+
+#login .divider span {
+    background-color: transparent;
+    padding: 0 12.5px;
+    font-size: 16px;
+    color: #999;
+}
+
+#login .social-options {
+    text-align: center;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+#login .social-icons {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+}
+
+#login .social-icons img,
+#login .social-icons i {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#login .social-icons i {
+    font-size: 1.5rem;
+    color: dodgerblue;
+}
+
+#login .social-icons img:hover,
+#login .social-icons i:hover {
+    transform: scale(1.25);
+}
+
+#login p {
+    font-size: 0.8rem;
+    max-width: 600px;
+    margin: 20px 0;
+    line-height: 1.6;
+    opacity: 0.8;
+    text-align: center;
+}
+
+#login a {
+    color: #0077cc;
+    margin-left: 5px;
+    transition: all 0.3s ease;
+    cursor: none;
+}
+
+#login a:hover,
+#login .form-options a:hover {
+    transform: scale(1.05);
+    color: var(--sub);
+    text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    #login a:hover,
+    #login .form-options a:hover,
+    #login .input-group i,
+    #login button {
+        cursor: pointer;
+    }
+}

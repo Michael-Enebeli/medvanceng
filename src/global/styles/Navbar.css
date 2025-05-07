@@ -1,0 +1,186 @@
+
+#homenav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    transition: transform 0.3s ease;
+    z-index: 999;
+    background: var(--bg);
+    box-shadow: 0 2px 8px rgba(97, 73, 73, 0.5);
+  }
+  
+.nav-container {
+    width: 92.5vw;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    height: 60px;
+    background: var(--bg);
+    z-index: 20;
+}
+
+.logo {
+    flex: 1;
+    color: var(--main);
+}
+
+#login header a {
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+}
+
+#login header a:hover {
+    text-decoration: underline;
+    color: var(--text);
+}
+.logo span {
+    color: var(--sub);
+}
+
+.logo img {
+    height: auto;
+    width: 250px;
+}
+
+.nav-links,
+nav .authentication {
+    display: none;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute;
+    right: 30px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .hamburger {
+        cursor: pointer;
+    }
+}
+
+.hamburger .line {
+    height: 3px;
+    background-color: var(--main);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 50px;
+}
+
+.hamburger .top {
+    width: 30px;
+    left: 0;
+}
+
+.hamburger .middle {
+    width: 30px;
+    left: 5px;
+}
+
+.hamburger .bottom {
+    width: 30px;
+    left: 10px;
+}
+
+@media (min-width: 900px) {
+    .hamburger {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        z-index: 20;
+    }
+
+    .nav-links li {
+        transition: all 0.3s ease;
+    }
+
+    .nav-links li:hover {
+        color: var(--sub);
+        transform: scale(1.05);
+    }
+
+    .nav-links li a {
+        text-decoration: none;
+        color: var(--text);
+        background: none;
+        border: none;
+        padding: 8px 12px;
+        transition: all 0.3s ease;
+        font-weight: 900;
+        z-index: 200;
+        cursor: none;
+    }
+
+    .nav-links li a:hover {
+        color: var(--main);
+        transform: scale(1.05);
+    }
+
+    .nav-links a.active {
+        color: var(--sub);
+        transform: none;
+        pointer-events: none;
+    }
+
+
+    @media (hover: hover) and (pointer: fine) {
+        .nav-links li a {
+            cursor: pointer;
+        }
+    }
+
+    nav .authentication {
+        display: flex;
+        justify-content: flex-end;
+        flex: 1;
+        list-style: none;
+    }
+}
+
+nav .authentication li {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    z-index: 20;
+    cursor: pointer;
+}
+
+nav .authentication li a {
+    text-decoration: none;
+    display: block;
+    color: var(--text);
+    transition: all 0.3s ease;
+    padding: 0.75rem 30px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+nav .authentication li a:hover {
+    color: var(--sub);
+    transform: scale(1.05);
+}
+
+nav .authentication li:nth-child(2) a {
+    background: var(--sub);
+    color: var(--bg);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+nav .authentication li:nth-child(2) a:hover {
+    background: var(--main);
+    transform: scale(1.05);
+}

@@ -1,0 +1,362 @@
+#profile {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 720px) {
+    #profile {
+        background: url("/images/profile-bg.jpg") no-repeat center center fixed;
+        background-size: cover;
+    }
+}
+
+#profile header {
+    position: absolute;
+    top: 10px;
+    left: 4.5vw;
+}
+
+#profile header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#profile header h1 span {
+    color: var(--sub);
+}
+
+#profile header a {
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+}
+
+#profile header a:hover {
+    text-decoration: underline;
+    color: var(--text);
+}
+
+#profile .profile-setup {
+    background: var(--bg);
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 70px;
+}
+
+@media (min-width: 720px) {
+    #profile .profile-setup {
+        margin-top: 0;
+    }
+}
+
+#profile .form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#profile .form-header .icon,
+#profile .form-header .skip {
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--sub);
+}
+
+#profile .form-header .icon {
+    font-size: 1.5rem;
+}
+
+#profile h2 {
+    text-align: center;
+    margin: 1rem 0 2rem;
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+#profile .avatar-wrapper {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 2rem;
+}
+
+#profile .avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+}
+
+#profile .avatar-wrapper .camera-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #f9f9f9;
+    color: darkgrey;
+    padding: 8px;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    #profile .avatar-wrapper .camera-icon {
+        cursor: pointer;
+    }
+}
+
+#profile .photo-options {
+    position: absolute;
+    bottom: -75px;
+    right: -25px;
+    background: #fefefe;
+    border: 1px solid #bbb;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1;
+    opacity: 0;
+    width: 160px;
+    pointer-events: none;
+    transform: translateY(-5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#profile .photo-options.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+#profile .photo-options button {
+    padding: 10px 15px;
+    font-size: 0.8rem;
+    background: var(--bg);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-weight: 500;
+}
+
+#profile .photo-options button:hover {
+    background: var(--main);
+    color: var(--bg);
+}
+
+#profile form .placeholder,
+#profile form input::placeholder {
+    font-size: 0.8rem;
+    color: var(--text);
+    opacity: 0.7;
+    font-family: "Poppins", sans-serif;
+}
+
+#profile form input:focus {
+    outline: none;
+    border: 2px solid var(--sub);
+}
+
+#profile form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#profile .row {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#profile .dob-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#profile .dob-dropdown input {
+    width: 100%;
+    padding-right: 30px;
+    cursor: pointer;
+}
+
+#profile .dob-dropdown i {
+    position: absolute;
+    right: 25px;
+    pointer-events: none;
+    color: inherit;
+}
+
+
+#profile .dropdown-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+#profile .gender-dropdown,
+#profile .state-dropdown {
+    padding: 12px 25px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+#profile .dropdown .fa-chevron-down {
+    margin-left: 10px;
+}
+
+#profile .dropdown-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border: 1px solid #bbb;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+#profile .dropdown-options.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+#profile .dropdown-option {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#profile .dropdown-option:hover {
+    background: var(--main);
+    color: var(--bg);
+}
+
+#profile .circle-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+#profile .outer-circle {
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+    border: 2px solid #81A5AF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#profile .inner-circle {
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    border: 2px solid #81A5AF;
+    border-radius: 50%;
+}
+
+#profile input[type="text"],
+#profile input[type="date"] {
+    padding: 12px 25px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#profile button[type="submit"] {
+    margin-top: 1rem;
+    padding: 0.85rem;
+    background-color: var(--sub);
+    color: var(--bg);
+    border: none;
+    border-radius: 24px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#profile button[type="submit"]:hover {
+    background-color: var(--main);
+    transform: scale(1.05);
+}
+
+#profile .row .dropdown-wrapper {
+    background-color: white;
+}
+
+@media (min-width: 720px) {
+    #profile .row {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    #profile .row input,
+    #profile .row .dropdown-wrapper {
+        flex: 100%;
+    }
+}
+
+#profile small {
+    color: red;
+    font-size: 0.7rem;
+}
+
+
+
+
+.air-datepicker-body--day-name {
+    color: var(--sub) !important;
+}
+
+.air-datepicker-nav--title {
+    color: var(--sub) !important;
+    font-weight: bold;
+}
+
+.air-datepicker-nav--title i {
+    color: var(--sub) !important;
+}
+
+.air-datepicker-cell.-day-:hover {
+    background-color: var(--sub) !important;
+    color: #ffffff !important;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}

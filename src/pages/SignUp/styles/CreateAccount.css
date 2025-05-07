@@ -1,0 +1,232 @@
+#createAccount {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    background-color: var(--bg);
+  }
+  
+  @media (min-width: 720px) {
+    #createAccount {
+      background: url("/images/login-bg.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
+  }
+  
+  #createAccount header {
+    position: absolute;
+    top: 10px;
+    left: 4.5vw;
+  }
+  
+  #createAccount h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  #createAccount h1 span {
+    color: var(--sub);
+  }
+  
+  #createAccount header a {
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+  }
+  
+  #createAccount header a:hover {
+    text-decoration: underline;
+    color: var(--text);
+  }
+  
+  #createAccount .form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 75vh;
+    margin: 5% 0;
+  }
+  
+  #createAccount form {
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--bg);
+  }
+  
+  #createAccount h2 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin: 2rem 0 20px 0;
+  }
+  
+  #createAccount .input-group {
+    position: relative;
+    margin-bottom: 1.25rem;
+  }
+  
+  #createAccount .input-group input {
+    width: 100%;
+    padding: 0.8rem 2.5rem 0.8rem 1.2rem;
+    border: 1px solid rgba(43, 43, 43, 0.25);
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  #createAccount .input-group input:focus {
+    outline: none;
+    border: 2px solid var(--sub);
+  }
+  
+  #createAccount .input-group input::placeholder {
+    font-size: 0.9rem;
+    color: var(--text);
+    opacity: 0.7;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  #createAccount .input-group .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: none;
+    color: var(--sub);
+    padding: 10px;
+  }
+  
+  #createAccount .error {
+    color: red;
+    font-size: 0.8rem;
+    margin: 0;
+  }
+  
+  #createAccount button {
+    width: 100%;
+    padding: 0.85rem;
+    background-color: var(--sub);
+    color: var(--bg);
+    border: none;
+    border-radius: 24px;
+    font-size: 0.9rem;
+    cursor: none;
+    transition: all 0.3s ease;
+  }
+  
+  #createAccount button:disabled {
+    background-color: var(--sub);
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  
+  #createAccount button:hover:enabled {
+    background: var(--main);
+    transform: scale(1.05);
+  }
+  
+  #createAccount button i {
+    margin-right: 5px;
+  }
+  
+  #createAccount .divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 25px 0;
+  }
+  
+  #createAccount .divider::before,
+  #createAccount .divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  #createAccount .divider::before {
+    margin-right: 10px;
+  }
+  
+  #createAccount .divider::after {
+    margin-left: 10px;
+  }
+  
+  #createAccount .divider span {
+    background-color: transparent;
+    padding: 0 12.5px;
+    font-size: 16px;
+    color: #999;
+  }
+  
+  #createAccount .social-options {
+    text-align: center;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+  }
+  
+  #createAccount .social-icons {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+  }
+  
+  #createAccount .social-icons img,
+  #createAccount .social-icons i {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  #createAccount .social-icons i {
+    font-size: 1.5rem;
+    color: dodgerblue;
+  }
+  
+  #createAccount .social-icons img:hover,
+  #createAccount .social-icons i:hover {
+    transform: scale(1.25);
+  }
+  
+  #createAccount p {
+    font-size: 0.8rem;
+    max-width: 600px;
+    margin: 20px 0;
+    line-height: 1.6;
+    opacity: 0.8;
+    text-align: center;
+  }
+  
+  #createAccount a {
+    color: #0077cc;
+    margin-left: 5px;
+    transition: all 0.3s ease;
+    cursor: none;
+  }
+  
+  #createAccount a:hover {
+    transform: scale(1.05);
+    color: var(--sub);
+    text-decoration: none;
+  }
+  
+  @media (hover: hover) and (pointer: fine) {
+    #createAccount a,
+    #createAccount button,
+    #createAccount .input-group .toggle-password {
+      cursor: pointer;
+    }
+  }
+  
+  #createAccount small {
+    text-align: center;
+    width: fit-content;
+    margin: 10% auto 10% auto;
+    font-size: 0.7rem;
+    display: block;
+    border-radius: 12px;
+    padding: 3px 10px;
+    background:  var(--main);
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
