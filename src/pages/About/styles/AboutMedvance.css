@@ -1,0 +1,77 @@
+.about-medvance {
+    display: flex;
+    flex-direction: column;
+    margin: 10% 0;
+}
+
+.about-text {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.about-text p {
+    font-size: 0.9rem;
+    margin: 20px 0;
+    max-width: 420px;
+}
+
+.about-text h2 span {
+    color: var(--sub);
+}
+
+.about-image img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.about-image {
+    border-top-left-radius: 200px;
+    border-bottom-left-radius: 200px;
+    height: 300px;
+    padding-left: 20px;
+}
+
+.about-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: right;
+    border-top-left-radius: 200px;
+    border-bottom-left-radius: 200px;
+}
+
+@media (min-width: 550px) {
+    .about-medvance {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .about-text {
+        flex: 1;
+        padding: 1rem;
+        text-align: left;
+        margin-left: 3rem;
+    }
+
+    .about-image {
+        flex: 1;
+        height: 450px;
+        padding-left: 0;
+    }
+
+    .about-image img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: right;
+    }
+}
+
+@media (min-width: 1024px) {
+    .about-text {
+        padding: 2rem;
+        margin-left: 10%;
+    }
+}

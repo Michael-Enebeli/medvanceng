@@ -110,10 +110,10 @@ const ContactSection = () => {
         </p>
 
         <div className="social-icons">
-          <a href="#"><i className="fab fa-linkedin" /></a>
-          <a href="#"><i className="fab fa-x-twitter" /></a>
-          <a href="#"><i className="fab fa-instagram" /></a>
-          <a href="#"><i className="fab fa-facebook" /></a>
+          <a href="#l"><i className="fab fa-linkedin" /></a>
+          <a href="#t"><i className="fab fa-x-twitter" /></a>
+          <a href="#i"><i className="fab fa-instagram" /></a>
+          <a href="#f"><i className="fab fa-facebook" /></a>
         </div>
 
         <div className="contact-details">

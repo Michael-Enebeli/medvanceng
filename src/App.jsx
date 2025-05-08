@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./global/components/Navbar";
 import Sidebar from "./global/components/Sidebar";
 
+import ScrollToTop from "./utils/ScrollToTop";
 
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
@@ -15,6 +16,7 @@ import NotFound from "./pages/NotFound/NotFound";
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <Sidebar /> 
       <Routes>

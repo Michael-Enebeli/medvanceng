@@ -14,26 +14,26 @@ const Footer = () => {
         <nav>
           <h4>Company</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Careers</a></li>
+            <li><a href="#h">Home</a></li>
+            <li><a href="#a">About Us</a></li>
+            <li><a href="#c">Careers</a></li>
           </ul>
         </nav>
 
         <nav>
           <h4>Information</h4>
           <ul>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Help Centers</a></li>
-            <li><a href="#">Support</a></li>
+            <li><a href="#f">FAQs</a></li>
+            <li><a href="#h">Help Centers</a></li>
+            <li><a href="#s">Support</a></li>
           </ul>
         </nav>
 
         <nav>
           <h4>Legal</h4>
           <ul>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#t">Terms & Conditions</a></li>
+            <li><a href="#p">Privacy Policy</a></li>
           </ul>
         </nav>
 
@@ -54,10 +54,10 @@ const Footer = () => {
             <FiPhone size={20} style={{ strokeWidth: 2 }} /> +23481000000000
           </a>
           <div className="social-icons">
-            <a href="#"><i className="fab fa-linkedin" /></a>
-            <a href="#"><i className="fab fa-x-twitter" /></a>
-            <a href="#"><i className="fab fa-instagram" /></a>
-            <a href="#"><i className="fab fa-facebook" /></a>
+            <a href="#l"><i className="fab fa-linkedin" /></a>
+            <a href="#t"><i className="fab fa-x-twitter" /></a>
+            <a href="#i"><i className="fab fa-instagram" /></a>
+            <a href="#f"><i className="fab fa-facebook" /></a>
           </div>
         </nav>
       </div>

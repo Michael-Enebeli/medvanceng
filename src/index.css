@@ -13,7 +13,6 @@ html {
   line-height: 1.5;
   font-size: 16px;
   background: var(--bg);
-  scroll-behavior: smooth;
   color: var(--text);
 }
 
@@ -30,6 +29,7 @@ button {
 }
 
 @media (hover: hover) and (pointer: fine) {
+
   a,
   button {
     cursor: pointer;

@@ -1,0 +1,96 @@
+.bridge {
+    display: flex;
+    flex-direction: column;
+    margin: 10% 0;
+}
+
+.bridge-text {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.bridge-text h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.bridge-text p {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0 5px;
+}
+
+.bridge .bridge-image img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.bridge .bridge-image {
+    border-top-left-radius: 200px;
+    border-bottom-left-radius: 200px;
+    height: 300px;
+    padding-left: 20px;
+}
+
+.bridge .bridge-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: right;
+    border-top-left-radius: 200px;
+    border-bottom-left-radius: 200px;
+}
+
+@media (min-width: 550px) {
+    .bridge {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .bridge-text {
+        flex: 1;
+        padding: 1rem;
+        text-align: left;
+        margin-left: 3rem;
+    }
+
+    .bridge-text h2 {
+        font-size: 2rem;
+        max-width: 400px;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    .bridge-text p {
+        font-size: 0.9rem;
+        margin: 20px 0;
+        max-width: 420px;
+        max-width: 380px;
+        text-align: left;
+        font-size: 1rem;
+    }
+
+    .bridge .bridge-image {
+        flex: 1;
+        height: 450px;
+        padding-left: 0;
+    }
+
+    .bridge .bridge-image img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: right;
+    }
+}
+
+@media (min-width: 1024px) {
+    .bridge-text {
+        padding: 2rem;
+        margin-left: 10%;
+    }
+}
