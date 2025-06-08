@@ -102,11 +102,8 @@ const LoginForm = () => {
                 setPasswordError('');
               }}
             />
-            <i
-              className={`fas ${showPassword ? 'fa-eye-slash' : 'fa-eye'}`}
-              onClick={() => setShowPassword(!showPassword)}
-              style={{ cursor: 'pointer' }}
-            ></i>
+            <i className={`fas ${showPassword ? 'fa-eye-slash' : 'fa-eye'}`}
+              onClick={() => setShowPassword(!showPassword)}> </i>
             {passwordError && <span className="error-message">{passwordError}</span>}
           </div>
 

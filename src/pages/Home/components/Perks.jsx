@@ -39,23 +39,21 @@ const whyMedvanace = [
 export default function Perks() {
   return (
     <>
-      <main className="perks-header" itemScope itemType="https://schema.org/MedicalOrganization">
-        <section className="perks-intro">
+      <div className="perks-header" itemScope itemType="https://schema.org/MedicalOrganization">
+        <article>
           <div className="perks-heading">
-            <span className="perks-tag">
-              <p>perks</p>
-            </span>
+            <span> perks </span>
             <h1 itemProp="name">Why Medvance?</h1>
           </div>
           <div className="perks-description">
             <p itemProp="description">
-              At <span className="highlight" itemProp="legalName">Medvance</span>, we understand
+              At <span itemProp="legalName">Medvance</span>, we understand
               that access to medical care can be challenging. Our platform
               provides easy access to doctors, medications, prescription
               interpretation, and counseling, even for urgent concerns.
             </p>
           </div>
-        </section>
+        </article>
 
         <section className="perks-image">
           <figure>
@@ -69,7 +67,7 @@ export default function Perks() {
             />
           </figure>
         </section>
-      </main>
+      </div>
 
       <main className="perks-main">
         <figure className="perks-mockup">
@@ -82,7 +80,7 @@ export default function Perks() {
           />
         </figure>
 
-        <section className="perks-list">
+        <section>
           {whyMedvanace.map((why) => (
             <div
               key={why.id}

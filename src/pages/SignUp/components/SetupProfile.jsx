@@ -35,20 +35,20 @@ export default function SetupProfile({ goBack }) {
 
             <section className="profile-setup">
                 <div className="form-header">
-                    <div className="icon" title="Back to previous" onClick={goBack}>
+                    <button title="Back to previous" onClick={goBack}>
                         <i className="fas fa-arrow-left"></i>
-                    </div>
+                    </button>
 
-                    <div className="skip">Skip <i className="fas fa-chevron-right"></i></div>
+                    <button> Skip <i className="fas fa-chevron-right"></i></button>
                 </div>
 
                 <h2>Setup Your Profile</h2>
 
                 <div className="avatar-wrapper" ref={photoOptionsRef}>
                     <img src={avatar} alt="Avatar" />
-                    <div className="camera-icon" title="Upload a photo" onClick={() => setShowPhotoOptions(!showPhotoOptions)}>
+                    <button className="camera-icon" title="Upload a photo" onClick={() => setShowPhotoOptions(!showPhotoOptions)}>
                         <i className="fas fa-camera"></i>
-                    </div>
+                    </button>
                     <div className={`photo-options ${showPhotoOptions ? 'show' : ''}`}>
                         <button onClick={() => choosePhoto('camera')}>Take a photo</button>
                         <button onClick={() => choosePhoto('library')}>Choose from library</button>
@@ -74,15 +74,19 @@ export default function SetupProfile({ goBack }) {
                             <i className="fa fa-chevron-down"></i>
                         </div>
                         <div className="dropdown-wrapper" ref={genderDropdownRef}>
-                            <div className="gender-dropdown" onClick={() => {
-                                setShowGenderOptions(!showGenderOptions);
-                                setShowStateOptions(false);
-                            }}>
+                            <div
+                                className={`gender-dropdown ${showGenderOptions ? 'active' : ''}`}
+                                onClick={() => {
+                                    setShowGenderOptions(!showGenderOptions);
+                                    setShowStateOptions(false);
+                                }}
+                            >
                                 <span className={gender ? '' : 'placeholder'}>
                                     {gender || 'Gender'}
                                 </span>
                                 <i className="fa fa-chevron-down"></i>
                             </div>
+
                             <div className={`dropdown-options ${showGenderOptions ? 'show' : ''}`}>
                                 {['Female', 'Male'].map(g => (
                                     <div key={g} className="dropdown-option" onClick={() => handleGenderSelect(g)}>
@@ -97,15 +101,19 @@ export default function SetupProfile({ goBack }) {
 
                     <div className="row">
                         <div className="dropdown-wrapper" ref={stateDropdownRef}>
-                            <div className="state-dropdown" onClick={() => {
-                                setShowStateOptions(!showStateOptions);
-                                setShowGenderOptions(false);
-                            }}>
+                            <div
+                                className={`state-dropdown ${showStateOptions ? 'active' : ''}`}
+                                onClick={() => {
+                                    setShowStateOptions(!showStateOptions);
+                                    setShowGenderOptions(false);
+                                }}
+                            >
                                 <span className={state ? '' : 'placeholder'}>
                                     {state || 'State of residence'}
                                 </span>
                                 <i className="fa fa-chevron-down"></i>
                             </div>
+
                             <div className={`dropdown-options ${showStateOptions ? 'show' : ''}`}>
                                 {STATES.map(s => (
                                     <div key={s} className="dropdown-option" onClick={() => handleStateSelect(s)}>

@@ -1,5 +1,6 @@
 import React from "react";
-import "../styles/Footer.css"; 
+import "../styles/Footer.css";
+import { Link } from "react-router-dom";
 import { CiLocationOn, CiMail } from "react-icons/ci";
 import { FiPhone } from "react-icons/fi";
 
@@ -7,9 +8,11 @@ const Footer = () => {
   return (
     <footer id="footer">
       <div className="footer-container">
-        <h2>
-          Med<span>vance</span>
-        </h2>
+        <Link to="/" aria-label="To homepage">
+          <h2>
+            Med<span>vance</span>
+          </h2>
+        </Link>
 
         <nav>
           <h4>Company</h4>
@@ -63,7 +66,7 @@ const Footer = () => {
       </div>
       <hr />
       <div className="footer-bottom">
-        <span>© 2025 MedVanceNg. All rights reserved</span>
+        <span>© {new Date().getFullYear()} MedVanceNg. All rights reserved</span>
         <input type="text" placeholder="English" />
       </div>
     </footer>

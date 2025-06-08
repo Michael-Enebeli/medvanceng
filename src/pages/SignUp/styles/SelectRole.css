@@ -28,6 +28,7 @@
 #signUp header h1 {
     font-size: 1.5rem;
     font-weight: 600;
+    color: var(--main);
 }
 
 
@@ -41,13 +42,8 @@
     margin: 0;
   }
   
-  #signUp header a:hover {
-    text-decoration: underline;
-    color: var(--text);
-  }
   
 #signUp main {
-    display: block;
     padding: 20px;
     max-width: 400px;
     text-align: center;

@@ -27,7 +27,7 @@ function SelectRole() {
 
   const handleRoleSelect = (role) => {
     sessionStorage.setItem('selectedRole', role);
-    navigate('createAccount'); 
+    navigate('create_account'); 
   };
 
   return (

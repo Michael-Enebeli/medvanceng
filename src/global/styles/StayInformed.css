@@ -69,6 +69,12 @@
     border: none;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.stay-wrapper button:hover {
+    color: var(--bg);
+    background: var(--main);
 }
 
 .stay-wrapper span {

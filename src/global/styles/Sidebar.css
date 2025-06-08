@@ -1,4 +1,4 @@
-aside {
+aside#sidebar {
     position: fixed;
     top: 0;
     transform: translateX(-100%);
@@ -12,17 +12,17 @@ aside {
 }
 
 @media (min-width: 1024px) {
-    aside {
+    aside#sidebar {
         display: none;
     }
 }
 
-aside.open {
+aside#sidebar.open {
     transform: translateX(0);
 }
 
 
-aside button {
+aside#sidebar button {
     font-size: 3rem;
     background: none;
     border: none;
@@ -96,9 +96,11 @@ aside .authentication li a {
 aside .authentication li:nth-child(2) a {
     background: var(--sub);
     color: var(--bg);
-    display: block;
     font-weight: normal;
     transition: all 0.3s ease;
+    width: 40%;
+    margin: 0 auto;
+    max-width: 150px;
 }
 
 aside .authentication li a:hover {
@@ -108,11 +110,12 @@ aside .authentication li a:hover {
 aside .authentication li:nth-child(2) a:hover {
     background: var(--main);
     color: var(--bg);
+    font-weight: bold;
 }
 
 @media (hover: hover) and (pointer: fine) {
     .sidebar-links a,
-    aside button,
+    aside#sidebar button,
     aside .authentication li a {
         cursor: pointer;
     }

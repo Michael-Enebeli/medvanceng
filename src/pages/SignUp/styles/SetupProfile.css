@@ -22,6 +22,7 @@
 
 #profile header h1 {
     font-size: 1.5rem;
+    color: var(--main);
     font-weight: 600;
 }
 
@@ -33,11 +34,6 @@
     text-decoration: none;
     color: inherit;
     margin: 0;
-}
-
-#profile header a:hover {
-    text-decoration: underline;
-    color: var(--text);
 }
 
 #profile .profile-setup {
@@ -62,17 +58,14 @@
     margin-bottom: 1rem;
 }
 
-#profile .form-header .icon,
-#profile .form-header .skip {
+#profile .form-header button {
     font-size: 1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 5px;
     color: var(--sub);
+    background: none;
+    border: none;
 }
 
-#profile .form-header .icon {
+#profile .form-header button:first-child {
     font-size: 1.5rem;
 }
 
@@ -98,7 +91,7 @@
     border: 2px solid #ccc;
 }
 
-#profile .avatar-wrapper .camera-icon {
+#profile .avatar-wrapper  .camera-icon {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -106,6 +99,7 @@
     color: darkgrey;
     padding: 8px;
     border-radius: 50%;
+    border: none;
     font-size: 1.1rem;
     display: flex;
     align-items: center;
@@ -196,7 +190,12 @@
 #profile .dob-dropdown input {
     width: 100%;
     padding-right: 30px;
-    cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    #profile .dob-dropdown input {
+        cursor: pointer;
+    }
 }
 
 #profile .dob-dropdown i {
@@ -221,8 +220,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
 }
+
+#profile .gender-dropdown.active,
+#profile .state-dropdown.active {
+    border: 2px solid var(--sub);
+} 
+
+
+@media (hover: hover) and (pointer: fine) {
+    #profile .gender-dropdown,
+    #profile .state-dropdown {
+        cursor: pointer;
+    }
+}
+
 
 #profile .dropdown .fa-chevron-down {
     margin-left: 10px;
@@ -256,8 +268,13 @@
     padding: 10px;
     display: flex;
     align-items: center;
-    cursor: pointer;
     transition: background-color 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    #profile .dropdown-optionn {
+        cursor: pointer;
+    }
 }
 
 #profile .dropdown-option:hover {
@@ -293,7 +310,7 @@
 
 #profile input[type="text"],
 #profile input[type="date"] {
-    padding: 12px 25px;
+    padding: 9px 25px;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;

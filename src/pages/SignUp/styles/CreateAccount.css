@@ -21,6 +21,7 @@
   #createAccount h1 {
     font-size: 1.5rem;
     font-weight: 600;
+    color: var(--main);
   }
   
   #createAccount h1 span {
@@ -31,11 +32,6 @@
     text-decoration: none;
     color: inherit;
     margin: 0;
-  }
-  
-  #createAccount header a:hover {
-    text-decoration: underline;
-    color: var(--text);
   }
   
   #createAccount .form-container {

@@ -44,7 +44,7 @@
     border-bottom-left-radius: 200px;
 }
 
-@media (min-width: 550px) {
+@media (min-width: 720px) {
     .bridge {
         flex-direction: row;
         align-items: center;

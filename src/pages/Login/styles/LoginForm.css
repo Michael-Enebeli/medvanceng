@@ -31,11 +31,6 @@
     margin: 0;
 }
 
-#login header a:hover {
-    text-decoration: underline;
-    color: var(--text);
-}
-
 #login header h1 span {
     color: var(--sub);
 }
@@ -93,9 +88,8 @@
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
-    cursor: none;
     color: var(--sub);
-    padding: 10px;
+    padding: 12px;
 }
 
 #login .error-message {

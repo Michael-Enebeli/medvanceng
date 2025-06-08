@@ -29,8 +29,8 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <aside id="sidebar" ref={sidebarRef} className="sidebar">
-      <button className="close-btn" onClick={handleClose}>&times;</button>
+    <aside id="sidebar" ref={sidebarRef}>
+      <button type="button" onClick={handleClose}>&times;</button>
 
       <ul className="sidebar-links">
         <li>

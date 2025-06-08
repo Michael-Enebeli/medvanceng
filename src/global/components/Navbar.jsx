@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import useScrollDirection from "../../utils/useScrollDirection";
 import "../styles/Navbar.css";
 
@@ -28,18 +28,17 @@ const Navbar = () => {
     <nav id="homenav">
       <div className="nav-container">
         <div className="logo">
-          <h2>Med<span>vance</span></h2>
+          <Link to="/" aria-label="To homepage">
+            <h1>
+              Med<span>vance</span>
+            </h1>
+          </Link>
         </div>
-        <div
-          className="hamburger"
-          id="hamburger"
-          ref={hamburgerRef}
-          onClick={toggleHamburger}
-        >
-          <div className="line top"></div>
-          <div className="line middle"></div>
-          <div className="line bottom"></div>
-        </div>
+        <button type="button" id="hamburger" ref={hamburgerRef} onClick={toggleHamburger}>
+          <span className="line top"></span>
+          <span className="line middle"></span>
+          <span className="line bottom"></span>
+        </button>
 
         <ul className="nav-links">
           <li><NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>Home</NavLink></li>
