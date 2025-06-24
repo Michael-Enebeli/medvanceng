@@ -32,7 +32,7 @@ const Header = () => {
                         Quality <span>Healthcare</span>, Anytime and Anywhere
                     </h1>
                     <p>
-                         with certified medical professionals and gain access to prescription interpretation and counseling through telemedicine and smart health solutions.
+                      Connect   with certified medical professionals and gain access to prescription interpretation and counseling through telemedicine and smart health solutions.
                     </p>
                     <button onClick={handleGetStarted}>
                         Get Started <i className="fas fa-arrow-right"></i>
