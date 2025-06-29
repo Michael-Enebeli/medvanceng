@@ -6,7 +6,7 @@ import Pharmacy from "../pages/Pharmacy/Pharmacy";
 import Contact from "../pages/Contact/Contact";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
-import CreateAccount from '../pages/SignUp/components/CreateAccount';
+import CreateAccount from "../pages/SignUp/components/CreateAccount";
 import NotFound from "../pages/NotFound/NotFound";
 
 const Routing = [
