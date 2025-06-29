@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./global/components/Navbar";
 import Sidebar from "./global/components/Sidebar";
 import ScrollToTop from "./utils/ScrollToTop";
-import Routing from './config/Routes';
+import Routing from "./config/Routes";
 
 const App = () => {
   return (

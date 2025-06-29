@@ -15,7 +15,7 @@ const Routing = [
   { path: '/pharmacy', element: <Pharmacy /> },
   { path: '/contact', element: <Contact /> },
   { path: '/login', element: <Login /> },
-  { path: '/signup', element: <SignUp /> },
+  { path: '/signup/*', element: <SignUp /> },
   { path: '/signup/create_account', element: <CreateAccount /> },
   { path: '*', element: <NotFound /> },
 ];
