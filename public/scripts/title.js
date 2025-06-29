@@ -10,6 +10,9 @@ function updateTitle() {
         case '/about':
             pageTitle = 'Medvance | About';
             break;
+        case '/pharmacy':
+            pageTitle = 'Medvance | Pharmacy';
+            break;
         case '/contact':
             pageTitle = 'Medvance | Contact';
             break;

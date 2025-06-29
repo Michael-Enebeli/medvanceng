@@ -96,20 +96,47 @@ export const useProfileSetup = () => {
     fileInputRef.current.click();
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const cityRegex = /^[A-Za-z\s\-]+$/;
     const streetRegex = /^[A-Za-z0-9\s.,\-]+$/;
-
     const newErrors = {};
     if (city && !cityRegex.test(city)) newErrors.city = 'Invalid City';
     if (street && !streetRegex.test(street)) newErrors.street = 'Invalid Street Address';
-
     if (Object.keys(newErrors).length) {
       setErrors(newErrors);
     } else {
       setErrors({});
-      //To be Continued...
+      const data = {
+        gender: sessionStorage.getItem('gender'),
+        state: sessionStorage.getItem('state'),
+        city: sessionStorage.getItem('city'),
+        street: sessionStorage.getItem('street'),
+        avatar: sessionStorage.getItem('avatar'),
+        fullname: sessionStorage.getItem('fullname'),
+        email: sessionStorage.getItem('email'),
+        password: sessionStorage.getItem('password'),
+        selectedRole: sessionStorage.getItem('selectedRole'),
+      };
+      try {
+        const response = await fetch('/api/auth/signup', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
+        if (response.ok) {
+          navigate('/verification');
+        } else {
+          const error = await response.json();
+          alert(error.message);
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again later.');
+        
+      }
     }
   };
 

@@ -1,0 +1,44 @@
+.pharmacy-hero {
+  position: relative;
+  background-image: url('/images/contact-hero.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  overflow: hidden;
+}
+
+.pharmacy-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1;
+}
+
+.pharmacy-hero h1 {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  z-index: 2;
+  position: relative;
+}
+
+
+.pharmacy-hero p {
+  color: white;
+  font-size: 1.0rem;
+  margin: 15px 0;
+  z-index: 2;
+  position: relative;
+  width: 80%;
+  max-width: 500px;
+}

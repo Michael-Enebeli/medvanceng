@@ -44,6 +44,11 @@ const Sidebar = () => {
           </NavLink>
         </li>
         <li>
+          <NavLink to="/pharmacy" onClick={handleClose} className={({ isActive }) => (isActive ? "active" : "")}>
+            Pharmacy
+          </NavLink>
+        </li>
+        <li>
           <NavLink to="/contact" onClick={handleClose} className={({ isActive }) => (isActive ? "active" : "")}>
             Contact
           </NavLink>
