@@ -1,19 +1,80 @@
 #login {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Poppins', sans-serif;
-    overflow: hidden;
-    background-color: var(--bg);
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
 }
 
+#login::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/images/login.jpg") no-repeat center/cover;
+  opacity: 0.1; 
+  z-index: 0;
+}
+
+#login .login-wrapper > * {
+  position: relative;
+  z-index: 1;
+}
 
 @media (min-width: 720px) {
     #login {
-        background: url("/images/login-bg.jpg") no-repeat center center fixed;
-        background-size: cover;
+        flex-direction: row;
+    }
+    #login::before {
+        background: none;
     }
 }
+
+
+#login .image-container {
+ display: none;
+}
+
+@media (min-width: 900px) {
+ #login .image-container {
+     display: block;
+     width: 50vw;
+}
+  #login .image-container img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+      }
+    
+#login .login-wrapper {
+  width: 50vw;
+  height: 100vh;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+}
+
+#login .login-wrapper {
+  background: linear-gradient(to bottom, #ffffff 0%, #87ceeb 50%);
+    height: 100vh;
+}
+
+@media (min-width: 720px) {
+  #login .login-wrapper {
+    background: linear-gradient(to right, #ffffff 5%, #87ceeb 100%);
+  }
+}
+
+
 #login header {
     position: absolute;
     top: 10px;
@@ -40,12 +101,12 @@
     border-radius: 10px;
     width: 100%;
     max-width: 400px;
-    background-color: var(--bg);
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 
 #login h2 {
     text-align: center;

@@ -62,6 +62,10 @@ const LoginForm = () => {
 
   return (
     <div id="login">
+      <div className="image-container">
+        <img src="/images/login.jpg" alt="Login background" />
+      </div>
+      <div className="login-wrapper">
       <header role="banner">
         <Link to="/" aria-label="Back to homepage">
           <h1>
@@ -120,7 +124,7 @@ const LoginForm = () => {
               />
               Remember me
             </label>
-            <a href="#">Forgot password?</a>
+            <Link to="/password/forget">Forgot password?</Link>
           </div>
 
           <button type="submit" disabled={!email || !password}>
@@ -147,6 +151,7 @@ const LoginForm = () => {
           Don't have an account?  <Link to="/signup" aria-label="Create an account">Sign up</Link>
         </p>
       </div>
+    </div>
     </div>
   );
 };
