@@ -1,10 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
 import Datepicker from 'air-datepicker';
 import 'air-datepicker/air-datepicker.css';
+import { showError } from '@/utils/Toast';
+import { useNavigate } from 'react-router-dom';
+
 
 export const STATES = ["Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno", "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", "FCT", "Gombe", "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Kogi", "Kwara", "Lagos", "Nasarawa", "Niger", "Ogun", "Ondo", "Osun", "Oyo", "Plateau", "Rivers", "Sokoto", "Taraba", "Yobe", "Zamfara"];
 
 export const useProfileSetup = () => {
+  const navigate = useNavigate();
   const [gender, setGender] = useState(sessionStorage.getItem('gender') || '');
   const [state, setState] = useState(sessionStorage.getItem('state') || '');
   const [avatar, setAvatar] = useState(sessionStorage.getItem('avatar') || '/images/avatar.png');
@@ -116,7 +120,7 @@ export const useProfileSetup = () => {
         fullname: sessionStorage.getItem('fullname'),
         email: sessionStorage.getItem('email'),
         password: sessionStorage.getItem('password'),
-        selectedRole: sessionStorage.getItem('selectedRole'),
+        dob: sessionStorage.getItem('dob'),
       };
       try {
         const response = await fetch('/api/auth/signup', {
@@ -127,14 +131,14 @@ export const useProfileSetup = () => {
           body: JSON.stringify(data),
         });
         if (response.ok) {
-          navigate('/verification');
+sessionStorage.setItem('pending', data.email);
+        navigate('/verification');
         } else {
           const error = await response.json();
-          alert(error.message);
+          showError(error.message);
         }
       } catch (error) {
-        console.error('Error:', error);
-        alert('An error occurred. Please try again later.');
+        showError('An error occurred. Please try again later.');
         
       }
     }

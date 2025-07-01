@@ -19,6 +19,12 @@ function updateTitle() {
         case '/login':
             pageTitle = 'Medvance | Login';
             break;
+        case '/password/forget':
+            pageTitle = 'Medvance | Forget Password';
+            break;
+       case '/password/reset':
+            pageTitle = 'Medvance | Reset Password';
+            break;
         case '/signup':
             pageTitle = 'Medvance | Sign Up';
             break;

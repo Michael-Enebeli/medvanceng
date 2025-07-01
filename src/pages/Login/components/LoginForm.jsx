@@ -1,14 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/LoginForm.css';
 import { Link } from 'react-router-dom';
+import HandleLogin from '../utils/HandleLogin';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
+
   const [showPassword, setShowPassword] = useState(false);
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -38,7 +46,7 @@ const LoginForm = () => {
     setRememberMe(savedRememberMe);
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     let valid = true;
     setEmailError('');
@@ -55,8 +63,13 @@ const LoginForm = () => {
       valid = false;
     }
 
-    if (valid) {
-      alert('Dashboard coming soon');
+        if (valid) {
+          setIsLoggingIn(true);
+          try {
+            await HandleLogin(navigate);
+          } finally {
+            setIsLoggingIn(false);
+          }
     }
   };
 
@@ -127,8 +140,8 @@ const LoginForm = () => {
             <Link to="/password/forget">Forgot password?</Link>
           </div>
 
-          <button type="submit" disabled={!email || !password}>
-            <i className="fas fa-sign-in-alt"></i> Login
+          <button type="submit" disabled={!email || !password || isLoggingIn}>
+            <i className="fas fa-sign-in-alt"></i> {isLoggingIn ? 'Logging in...' : 'Login'}
           </button>
         </form>
 
@@ -142,7 +155,7 @@ const LoginForm = () => {
                 alt="Gmail Icon"
                 width="30" 
                 />
-            <i className="fab fa-facebook"></i>
+            
             <i className="fas fa-cloud"></i>
           </div>
         </div>

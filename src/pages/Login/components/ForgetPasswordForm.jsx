@@ -10,7 +10,7 @@ const ForgotPasswordForm = () => {
   return (
     <div id="forget">
       <div className="image-container">
-        <img src="/images/login.jpg" alt="Login background" />
+        <img src="/images/forget.png" alt="Forget password background" />
       </div>
       <div className="forget-wrapper">
       <header role="banner">

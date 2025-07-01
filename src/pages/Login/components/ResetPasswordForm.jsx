@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/ResetPasswordForm.css";
 import useResetPassword from "../utils/HandleResetPassword";
 import { Link } from "react-router-dom";
@@ -29,7 +29,7 @@ const ResetPasswordForm = () => {
   return (
     <div id="reset">
       <div className="image-container">
-        <img src="/images/login.jpg" alt="Signup background" />
+        <img src="/images/forget.png" alt="Reset password background" />
       </div>
       <div className="reset-wrapper">
         <header role="banner">

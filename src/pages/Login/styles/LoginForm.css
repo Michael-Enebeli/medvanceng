@@ -21,7 +21,7 @@
   z-index: 0;
 }
 
-#login .login-wrapper > * {
+#login .login-container > * {
   position: relative;
   z-index: 1;
 }
@@ -101,10 +101,11 @@
     border-radius: 10px;
     width: 100%;
     max-width: 400px;
-    margin: auto;
+    margin: 50px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 
@@ -274,7 +275,7 @@
 
 #login .social-options {
     text-align: center;
-    margin: 1.5rem 0;
+    margin: 1rem 0;
     font-size: 0.95rem;
     color: #555;
 }

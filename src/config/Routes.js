@@ -7,7 +7,7 @@ import Login from "../pages/Login/Login";
 import ForgetPassword from "../pages/Login/ForgetPassword";
 import ResetPassword from "../pages/Login/ResetPassword";
 import SignUp from "../pages/SignUp/SignUp";
-import CreateAccount from "../pages/SignUp/components/CreateAccount";
+import Verification from "../pages/SignUp/Verification";
 import NotFound from "../pages/NotFound/NotFound";
 
 const Routing = [
@@ -19,7 +19,7 @@ const Routing = [
   { path: "/password/forget", element: ForgetPassword },
   { path: "/password/reset", element: ResetPassword },
   { path: "/signup", element: SignUp },
-  { path: "/signup/create_account", element: CreateAccount },
+  { path: "/signup/Verification", element: Verification },
   { path: "*", element: NotFound },
 ];
 

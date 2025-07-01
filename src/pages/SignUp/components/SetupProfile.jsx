@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import '../styles/SetupProfile.css';
 import { Link } from 'react-router-dom';
 import { useProfileSetup, STATES, initDateOfBirthPicker } from '../../../utils/ProfileHelper';
@@ -39,7 +39,7 @@ export default function SetupProfile({ goBack }) {
                         <i className="fas fa-arrow-left"></i>
                     </button>
 
-                    <button> Skip <i className="fas fa-chevron-right"></i></button>
+                    <button onClick={handleSubmit}> Skip <i className="fas fa-chevron-right"></i></button>
                 </div>
 
                 <h2>Setup Your Profile</h2>

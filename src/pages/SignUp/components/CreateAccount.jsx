@@ -1,20 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/CreateAccount.css";
-import { useFormHelper } from "../../../utils/FormHelper";
+import { useFormHelper } from "@/utils/FormHelper";
 import SetupProfile from "./SetupProfile";
-import HideNav from "../../../utils/HideNav";
+import HideNav from "@/utils/HideNav";
 
 const CreateAccount = () => {
     const [accountCreated, setAccountCreated] = useState(false);
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        if (!sessionStorage.getItem("selectedRole")) {
-            navigate("/signup");
-        }
-    }, [navigate]);
-
+    
     const {
         formData,
         errors,
@@ -124,17 +117,11 @@ const CreateAccount = () => {
                                     alt="Gmail Icon"
                                     width="30"
                                 />
-                                <i className="fab fa-facebook"></i>
                                 <i className="fas fa-cloud"></i>
                             </div>
                         </div>
 
-                        <small>
-                            {sessionStorage.getItem("selectedRole") ===
-                            "practitioner"
-                                ? "Practitioner Account"
-                                : "User Account"}
-                        </small>
+                        
 
                         <p>
                             Already have an account?
@@ -148,7 +135,7 @@ const CreateAccount = () => {
                     </form>
                 </div>
             </div>
-            <HideNav />
+    <HideNav />
         </div>
     );
 };
