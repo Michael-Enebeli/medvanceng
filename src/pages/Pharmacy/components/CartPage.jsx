@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import useCounter from '../utils/UseCounter';
 
 export default function CartPage({ cart, products, setView, updateQuantity, removeFromCart }) {
@@ -16,6 +16,21 @@ export default function CartPage({ cart, products, setView, updateQuantity, remo
 
   const formatPrice = (amount) =>
     `₦${amount.toLocaleString(undefined, { minimumFractionDigits: 2 })}`;
+
+  useEffect(() => {
+    const summary = {
+      cartItems: cartItems.map(item => ({
+        name: item.name,
+        qty: item.qty,
+        price: item.price
+      })),
+      subtotal: rawSubtotal,
+      deliveryFee: deliveryFeeRaw,
+      total: rawSubtotal + deliveryFeeRaw
+    };
+    sessionStorage.setItem("cartSummary", JSON.stringify(summary));
+  }, [cart]);
+
 
   return (
     <>

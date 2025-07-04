@@ -1,7 +1,9 @@
 import React from "react";
 import { useDeliveryForm } from "../utils/UseDeliveryForm";
+import OrderSummary from "./OrderSummary"; // import it
+import { initiatePaystackPayment } from "../utils/Paystack";
 
-export default function DeliveryPage({ setDeliveryMethod, setView }) {
+export default function DeliveryPage({ setView, setCart }) {
   const {
     formData,
     errors,
@@ -14,14 +16,12 @@ export default function DeliveryPage({ setDeliveryMethod, setView }) {
     isValid
   } = useDeliveryForm();
 
-  const proceed = () => {
-    if (isValid) {
-      setDeliveryMethod("home");
-      setView("payment");
-    }
-  };
+  
 
   return (
+    <div className="delivery-content">
+      {/* 🧾 Order summary on the left (or top on small screens) */}
+      <OrderSummary />
     <div className="delivery-form">
       <h2>Delivery Information</h2>
       <p>Please fill in the information below <br /><small>All fields are required</small></p>
@@ -93,20 +93,22 @@ export default function DeliveryPage({ setDeliveryMethod, setView }) {
 
         <div className="input-field">
           <div className="dropdown-wrapper" ref={dropdownRef}>
-            <div
+            <button
+              type="button"
               className={`dropdown-input ${dropdownOpen ? "active" : ""}`}
               onClick={() => setDropdownOpen(!dropdownOpen)}
             >
               <span className={formData.state ? "selected" : "placeholder"}>
-                {formData.state || "Select State"}
+                {formData.state || "State"}
               </span>
               <i className={`fas fa-chevron-down ${dropdownOpen ? "rotate" : ""}`}></i>
-            </div>
+            </button>
 
             <div className={`dropdown-menu ${dropdownOpen ? "visible" : ""}`}>
               {STATES.map((s) => (
                 <button
                   key={s}
+                  type="button"
                   onClick={() => {
                     handleChange("state", s);
                     setDropdownOpen(false);
@@ -149,14 +151,11 @@ export default function DeliveryPage({ setDeliveryMethod, setView }) {
         Remember this info for next time
       </label>
 
-      <button
-        className="next-btn"
-        onClick={proceed}
-        disabled={!isValid}
-      >
-        Proceed to Payment
-      </button>
+        <button type="button" className="next-btn" onClick={() => initiatePaystackPayment(setView, setCart)} disabled={!isValid}>
+          Proceed to Payment
+        </button>
          </form>
     </div>
+      </div>
   );
 }

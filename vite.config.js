@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     allowedHosts: [
-      '8c354291-4984-4333-8511-1a5ca810d728-00-1nn34oyxxypsr.spock.replit.dev'
+      '588219e8-ae5a-4b74-a97f-9e79a2bc6942-00-3o4fl0iwucznk.janeway.replit.dev'
     ]
   },
   resolve: {

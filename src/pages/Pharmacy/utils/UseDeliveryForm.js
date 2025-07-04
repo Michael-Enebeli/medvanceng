@@ -5,6 +5,8 @@ export const useDeliveryForm = () => {
     const local = localStorage.getItem("deliveryForm");
     const session = sessionStorage.getItem("deliveryForm");
     const stored = JSON.parse(local || session || "{}");
+    
+
 
     return {
       firstName: stored.firstName || "",
@@ -20,7 +22,8 @@ export const useDeliveryForm = () => {
 
   const [errors, setErrors] = useState({});
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null); // 👈 reference to dropdown for outside click detection
+  const dropdownRef = useRef(null); 
+  
 
   const STATES = [
     "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno",
@@ -66,15 +69,27 @@ export const useDeliveryForm = () => {
   };
 
   const handleBlur = (field) => {
+    const touched = JSON.parse(sessionStorage.getItem("touchedFields") || "{}");
+    touched[field] = true;
+    sessionStorage.setItem("touchedFields", JSON.stringify(touched));
+
     const newErrors = validate(formData);
     if (newErrors[field]) {
       setErrors(prev => ({ ...prev, [field]: newErrors[field] }));
+    } else {
+      setErrors(prev => {
+        const updated = { ...prev };
+        delete updated[field];
+        return updated;
+      });
     }
   };
 
+
+
   const isValid = Object.keys(validate(formData)).length === 0;
 
-  // Auto-close dropdown on outside click
+  
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
@@ -91,6 +106,25 @@ export const useDeliveryForm = () => {
     };
   }, [dropdownOpen]);
 
+
+  useEffect(() => {
+    const touched = JSON.parse(sessionStorage.getItem("touchedFields") || "{}");
+    const allErrors = validate(formData);
+    const filteredErrors = {};
+
+    for (const field in allErrors) {
+      if (touched[field]) {
+        filteredErrors[field] = allErrors[field];
+      }
+    }
+
+    setErrors(filteredErrors);
+  },[]);
+
+
+
+
+
   return {
     formData,
     errors,
@@ -98,7 +132,7 @@ export const useDeliveryForm = () => {
     handleBlur,
     dropdownOpen,
     setDropdownOpen,
-    dropdownRef, // 👈 expose ref for UI to attach
+    dropdownRef, 
     STATES,
     isValid
   };

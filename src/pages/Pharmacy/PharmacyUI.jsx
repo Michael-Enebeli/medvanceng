@@ -63,7 +63,7 @@ export default function PharmacyUI() {
     const currentIndex = order.indexOf(view);
     const nextIndex = order.indexOf(nextView);
     if (nextIndex !== currentIndex) {
-      setHasNavigated(true); // Only true if the view is actually changing
+      setHasNavigated(true); 
     }
     setSlideDirection(nextIndex > currentIndex ? "forward" : "back");
     setView(nextView);
@@ -75,7 +75,7 @@ export default function PharmacyUI() {
           const timeout = setTimeout(() => {
             const y = viewRef.current.getBoundingClientRect().top + window.scrollY - 80;
             window.scrollTo({ top: y, behavior: 'smooth' });
-          }, 400);
+          }, 0);
 
           return () => clearTimeout(timeout);
         }, [view, hasNavigated]);
@@ -109,6 +109,7 @@ export default function PharmacyUI() {
   const slideClass = slideDirection === "back" ? "slide slide-back" : "slide";
 
   return (
+    <div id="pharmacy">
     <div className="container">
       {renderBackArrow()}
 
@@ -141,8 +142,7 @@ export default function PharmacyUI() {
       {view === "delivery" && (
         <div className={slideClass} ref={viewRef}>
           <DeliveryPage
-            deliveryMethod={deliveryMethod}
-            setDeliveryMethod={setDeliveryMethod}
+            setCart={setCart}
             setView={(v) => goToView(v)}
           />
         </div>
@@ -151,11 +151,12 @@ export default function PharmacyUI() {
         <div className={slideClass} ref={viewRef}>
           <PaymentPage
             cart={cart}
-            products={products}
-            deliveryMethod={deliveryMethod}
-          />
+            products={products} 
+            />
+            
         </div>
       )}
-    </div>
+    </div> 
+       </div>
   );
 }
