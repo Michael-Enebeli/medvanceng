@@ -1,15 +1,21 @@
 import React from 'react';
+import useCounter from '../utils/UseCounter';
 
 export default function CartPage({ cart, products, setView, updateQuantity, removeFromCart }) {
   const cartItems = Object.entries(cart).map(([id, qty]) => {
     const product = products.find(p => p.id === parseInt(id));
     return product ? { ...product, qty } : null;
-  }).filter(Boolean); 
+  }).filter(Boolean);
+
+  const rawSubtotal = cartItems.reduce((sum, item) => sum + item.qty * item.price, 0);
+
+  const deliveryFeeRaw = Math.min(rawSubtotal * 0.05, 2000);
+  const animatedSubtotal = useCounter(rawSubtotal, 400);
+  const animatedDelivery = useCounter(deliveryFeeRaw, 400);
+  const animatedTotal = useCounter(rawSubtotal + deliveryFeeRaw, 400);
 
   const formatPrice = (amount) =>
     `₦${amount.toLocaleString(undefined, { minimumFractionDigits: 2 })}`;
-
-  const subtotal = cartItems.reduce((sum, item) => sum + item.qty * item.price, 0);
 
   return (
     <>
@@ -48,8 +54,9 @@ export default function CartPage({ cart, products, setView, updateQuantity, remo
       )}
 
       <div className="cart-summary">
-        <h3>Subtotal: {formatPrice(subtotal)}</h3>
-        <h2>Total: {formatPrice(subtotal)}</h2>
+        <h3>Subtotal: {formatPrice(animatedSubtotal)}</h3>
+        <h4>Delivery Fee: {formatPrice(animatedDelivery)}</h4>
+        <h2>Total: {formatPrice(animatedTotal)}</h2>
         <button
           className="next-btn"
           onClick={() => setView("delivery")}

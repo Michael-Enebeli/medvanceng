@@ -15,10 +15,10 @@ export default function PharmacyShop({ products, cart, searchTerm, setSearchTerm
           <input value={searchTerm} onChange={e => setSearchTerm(e.target.value)} placeholder="Search..." />
           <i className="fas fa-search search-icon"></i>
         </div>
-        <div className="cart-icon" onClick={() => setView("cart")}>
+        <button className="cart-icon" onClick={() => setView("cart")}>
           <i className="fas fa-shopping-cart"></i>
           {totalItems > 0 && <span className="cart-badge">{totalItems}</span>}
-        </div>
+        </button>
       </div>
 
       <div className="product-grid">

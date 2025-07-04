@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/StayInformed.css";
+import { showSuccess } from "@/utils/Toast"
 
 export default function StayInformed() {
     const [email, setEmail] = useState("");
@@ -33,7 +34,7 @@ export default function StayInformed() {
             });
 
             if (response.ok) {
-                alert("Thanks for subscribing!");
+                showSuccess("Thanks for subscribing!");
                 setEmail("");
             } else {
                 setError("Something went wrong. Please try again.");

@@ -12,7 +12,7 @@
 
 .shop-all {
   color: var(--sub);
-  font-size: 16px;
+  font-size: 0.8rem;
   font-weight: bold;
   white-space: nnowrap
 }
@@ -29,7 +29,7 @@
   max-width: 300px;
   padding: 7px 40px 7px 15px;
   border-radius: 5px;
-  border: 1px solid var(--sub);
+  border: 2px solid var(--sub);
   font-size: 16px;
 }
 
@@ -37,6 +37,9 @@
   outline: none;
 }
 
+.search-bar input::placeholder {
+  font-size: 0.8rem;
+}
 
 .search-icon {
   position: absolute;
@@ -55,6 +58,8 @@
   text-align: right;
   font-size: 20px;
   color: var(--sub);
+  display: block;
+  border: none;
   position: relative;
   background: transparent;
 }
@@ -88,7 +93,7 @@
 }
 
 .product-card {
-  background: #f9f9f9;
+  background: var(--bg);
   padding: 35px 0;
   border-radius: 10px;
   text-align: center;
@@ -104,7 +109,7 @@
 
 .product-price {
   font-weight: 400;
-  margin: 15px 0;
+  margin: 20px 0;
   color: var(--text);
 }
 
@@ -112,8 +117,8 @@
   background-color: var(--sub);
   color: white;
   border: none;
-  padding: 10px 25px;
-  border-radius: 5px;
+  padding: 15px 45px;
+  border-radius: 22px;
   transition: all 0.3s ease;
 }
 
@@ -195,6 +200,7 @@
   max-width: 400px;
   margin: 0 auto;
   padding: 0 1rem 1rem 1rem;
+  background: var(--bg);
 }
 
 .cart-page >  h2 {
@@ -232,7 +238,6 @@
   width: 80px;
   height: 80px;
   object-fit: cover;
-  border: 1px solid #ccc;
   border-radius: 4px;
 }
 
@@ -297,16 +302,17 @@
 }
 
 .cart-summary {
-  ext-align: right;
+  padding: 20px 0;
   float: right;
   margin: 50px 0;
 }
 
-.cart-summary > h3 {
+.cart-summary h4 {
   border-bottom: 1px solid #ddd;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
+  padding: 10px 0 20px 0;
   width: fit-content;
+  opacity: 0.8;
+  font-weight: 400;
 }
 
 .next-btn {
@@ -320,10 +326,20 @@
   color: white;
   border: none;
   margin-top: 15px;
-  padding: 8px 20px;
+  padding: 17px 20px;
+  width: 100%;
   font-weight: bold;
   font-size: 16px;
-  border-radius: 5px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+
+  padding: 0.85rem;
+  background-color: var(--sub);
+  color: var(--bg);
+  border: none;
+  border-radius: 24px;
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
   transition: all 0.3s ease;
 }
 
@@ -344,4 +360,224 @@
   border-radius: 5px;
   cursor: not-allowed;
   transition: none;
+  width: 100%;
+
+  padding: 0.85rem;
+  background-color: var(--sub);
+  color: var(--bg);
+  border: none;
+  border-radius: 24px;
+  font-size: 0.9rem;
+  margin-top: 1.5rem
+  transition: all 0.3s ease;
 }
+
+.delivery-form {
+  max-width: 900px;
+  padding-bottom: 2rem;
+  isplay: grid;
+  place-items: center;
+}
+
+.delivery-form h2 {
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+}
+
+.delivery-form h2 + p {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  font-size: 0.85rem;
+}
+
+.delivery-form h2 + p small {
+  font-size: 0.65rem;
+  color: red;
+}
+
+.delivery-form input[type="text"],
+.delivery-form input[type="email"],
+.delivery-form input[type="tel"] {
+    width: 100%;
+    padding: 0.8rem 2.5rem 0.8rem 1.2rem;
+    border: 1px solid rgba(43, 43, 43, 0.25);
+    border-radius: 8px;
+    font-size: 0.8rem;
+    margin: 10px 0;
+    outline: none;
+    opacity: 0.7;
+}
+
+.delivery-form input:focus,
+.delivery-form .dropdown-input:focus,
+.delivery-form .dropdown-input:focus-visible {
+  border: 2px solid var(--sub);
+}
+
+.delivery-form form small {
+  color: red;
+  font-size: 0.65rem;
+  margin-top: -0.28rem;
+  margin-bott9m: 0.6rem;
+  margin-left: 0.6rem;
+  display: block;
+}
+
+@media (min-width: 720px) {
+  .input-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    gap: 1rem;
+  }
+}
+
+.dropdown-wrapper {
+  position: relative;
+  user-select: none;
+  margin: 10px 0;
+}
+
+.dropdown-input {
+  padding: 0.8rem 1.5rem 0.8rem 1.2rem;
+  border: 1px solid rgba(43, 43, 43, 0.25);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  opacity: 0.7;
+}
+
+.dropdown-input:focus {
+  border: 1px solid var(--sub);
+}
+
+.dropdown-input .fa-chevron-down {
+  transition: transform 0.3s ease;
+}
+
+.dropdown-input .rotate {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-height: 150px;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 0.3s, transform 0.3s, pointer-events 0s linear 0.3s;
+  z-index: 10;
+}
+
+.dropdown-menu.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.dropdown-input.active {
+  border: 2px solid var(--sub);
+}
+
+.dropdown-option {
+  display: flex;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  font-size: 0.78rem;
+  border: none;
+  transition: all 0.2s;
+  font-size: 0.8rem;
+  width: 100%;
+  background: var(--bg);
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+}
+
+.dropdown-option:hover {
+  background: var(--main);
+  color: var(--bg);
+}
+
+
+.circle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.outer-circle {
+  width: 18px;
+  height: 18px;
+  background-color: transparent;
+  border: 2px solid #81A5AF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-circle {
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  border: 2px solid #81A5AF;
+  border-radius: 50%;
+}
+
+.dropdown-option.active .inner-circle {
+  background-color: #81A5AF;
+  border-color: #81A5AF;
+}
+
+.remember-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1rem;
+  font-size: 0.7rem;
+}
+.delivery-form  input[type="checkbox"] {
+appearance: none;
+width: 20px;
+height: 20px;
+border: 1px solid var(--text);
+border-radius: 5px;
+background-color: white;
+cursor: pointer;
+display: inline-block;
+position: relative;
+opacity: 0.65;
+margin-right: 2px;
+}
+
+.delivery-form  input[type="checkbox"]:checked {
+background-color: var(--sub);
+border-color: var(--sub);
+opacity: 1;
+}
+
+.delivery-form  input[type="checkbox"]:checked::after {
+content: "\f00c";
+font-family: "Font Awesome 5 Free";
+font-weight: 900;
+color: white;
+font-size: 14px;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+opacity: 1;
+}
+
