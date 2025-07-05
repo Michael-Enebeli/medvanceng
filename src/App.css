@@ -1,29 +1,30 @@
 /* File: /styles/PharmacyShop.css */
 #pharmacy {
   background: rgba(242, 224, 233, 1);
+  display: grid;
+  place-items: center
 }
 .shop-header {
   align-items: center;
   margin-bottom: 30px;
-  padding: 0px 0%;
-  flex-wrap: wrap;
   display: grid;
-  grid-template-columns: 0.65fr 2fr 0.35fr;
-  max-width: 900px;
+  grid-template-columns: 0.5fr 2fr 0.5fr;
+  max-width: 1000px;
 }
 
 .shop-all {
   color: var(--sub);
   font-size: 0.8rem;
   font-weight: bold;
-  white-space: nnowrap
+  width: fit-conteny;
+  white-space: nowrap;
 }
 
 .search-bar {
   position: relative;
   max-width: 50vw;
-  margin: 10px auto;
-  
+  margin: 0px auto;
+
 }
 
 .search-bar input {
@@ -57,19 +58,26 @@
 }
 
 .cart-icon {
-  text-align: right;
+  text-align: center;
   font-size: 20px;
   color: var(--sub);
   display: block;
   border: none;
+  margin-top: 10px;
   position: relative;
   background: transparent;
+}
+
+@media (min-width: 768px) {
+  .shop-all {
+    text-align : center;
+  }
 }
 
 .cart-badge {
   position: absolute;
   top: -10px;
-  left: 90%;
+  left: 50%;
   padding-top: 1px;
   background: red;
   color: white;
@@ -88,7 +96,13 @@
   place-items: center;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 700px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
   .product-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -98,6 +112,7 @@
   background: var(--bg);
   padding: 35px 0;
   border-radius: 10px;
+  width: 100%;
   text-align: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
@@ -145,8 +160,8 @@
 .container {
   position: relative;
   width: 100%;
-  max-width: 900px;
-  margin: auto;
+  max-width: 1000px;
+  argin: auto;
   border: 1px solid #ddd;
   padding: 20px;
   overflow: hidden;
@@ -410,8 +425,17 @@
     font-size: 0.8rem;
     margin: 10px 0;
     outline: none;
-    opacity: 0.7;
+    background: var(--bg);
+    color: var(--text);
 }
+
+.delivery-form input[type="text"]::placeholder,
+.delivery-form input[type="email"]::placeholder,
+.delivery-form input[type="tel"]::placeholder {
+  color: var(--text);
+  opacity: 0.8;
+}
+
 
 .delivery-form input:focus,
 .delivery-form .dropdown-input:focus,
@@ -423,7 +447,7 @@
   color: red;
   font-size: 0.65rem;
   margin-top: -0.28rem;
-  margin-bott9m: 0.6rem;
+  margin-bottom: 0.6rem;
   margin-left: 0.6rem;
   display: block;
 }
@@ -450,9 +474,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.78rem;
-  opacity: 0.7;
-  background: white;
+  font-size: 0.8rem;
+  color: var(--text);
+  opacity: 0.9;
+  background: var(--bg);
   width: 100%;
 }
 
@@ -508,6 +533,7 @@
   background: var(--bg);
   font-family: 'Poppins', sans-serif;
   color: var(--text);
+  opacity: 1;
 }
 
 .dropdown-option:hover {
@@ -634,5 +660,6 @@ opacity: 1;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 2rem;
+    padding: 1rem;
   }
 }

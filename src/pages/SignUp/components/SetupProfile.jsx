@@ -24,8 +24,12 @@ export default function SetupProfile({ goBack }) {
 
     return (
         <div id="profile">
-            <HideNav />
-            <header>
+            <div className="image-container">
+                <img src="/images/login.jpg" alt="Setup background" />
+            </div>
+            
+            <div className="setup-wrapper">
+                <header>
                 <Link to="/" aria-label="Back to homepage">
                     <h1>
                         Med<span>vance</span>
@@ -154,6 +158,8 @@ export default function SetupProfile({ goBack }) {
                     <button type="submit">Continue</button>
                 </form>
             </section>
+            <HideNav />
+            </div>
         </div>
     );
 }

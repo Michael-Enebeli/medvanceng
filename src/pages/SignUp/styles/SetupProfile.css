@@ -5,13 +5,72 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+#profile::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/images/login.jpg") no-repeat center/cover;
+  opacity: 0.1; 
+  z-index: 0;
+}
+
+#profile .profile-setup > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 900px) {
+    #profile {
+        flex-direction: row;
+    }
+    #profile::before {
+        background: none;
+    }
+}
+
+
+#profile .image-container {
+ display: none;
+}
+
+@media (min-width: 900px) {
+ #profile .image-container {
+     display: block;
+     width: 50vw;
+}
+  #profile .image-container img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+      }
+
+#profile .setup-wrapper {
+  width: 50vw;
+  height: 100vh;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+}
+
+#profile .setup-wrapper {
+  background: linear-gradient(to bottom, #ffffff 0%, #87ceeb 50%);
 }
 
 @media (min-width: 720px) {
-    #profile {
-        background: url("/images/profile-bg.jpg") no-repeat center center fixed;
-        background-size: cover;
-    }
+  #profile .setup-wrapper {
+    background: linear-gradient(to right, #ffffff 5%, #87ceeb 100%);
+  }
 }
 
 #profile header {
@@ -37,12 +96,15 @@
 }
 
 #profile .profile-setup {
-    background: var(--bg);
     padding: 2rem;
     border-radius: 10px;
     width: 100%;
     max-width: 600px;
-    margin-top: 70px;
+    display: flex;
+    lign-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 75dvh;
 }
 
 @media (min-width: 720px) {
@@ -55,7 +117,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    padding: 1rem 0;
 }
 
 #profile .form-header button {
@@ -171,13 +233,13 @@
 #profile form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 #profile .row {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 #profile .dob-dropdown {
@@ -215,6 +277,7 @@
 #profile .state-dropdown {
     padding: 12px 25px;
     font-size: 1rem;
+    margin: 0;
     border: 1px solid #ccc;
     border-radius: 5px;
     display: flex;

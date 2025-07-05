@@ -14,7 +14,6 @@ export default function PharmacyUI() {
     return stored ? JSON.parse(stored) : {};
   });
   const [searchTerm, setSearchTerm] = useState("");
-  const [deliveryMethod, setDeliveryMethod] = useState("");
   const [slideDirection, setSlideDirection] = useState("forward");
   const [hasNavigated, setHasNavigated] = useState(false);
   const viewRef = useRef(null);
@@ -75,7 +74,7 @@ export default function PharmacyUI() {
           const timeout = setTimeout(() => {
             const y = viewRef.current.getBoundingClientRect().top + window.scrollY - 80;
             window.scrollTo({ top: y, behavior: 'smooth' });
-          }, 0);
+          }, 450);
 
           return () => clearTimeout(timeout);
         }, [view, hasNavigated]);

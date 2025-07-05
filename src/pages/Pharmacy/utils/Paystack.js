@@ -1,5 +1,6 @@
 // utils/Paystack.js
-import { showError, showSuccess } from "@/utils/Toast";
+import { showError } from "@/utils/Toast";
+import SuccessModal from "../components/SuccessModal";
 
 export const loadPaystackScript = () => {
   return new Promise((resolve, reject) => {
@@ -15,7 +16,6 @@ export const loadPaystackScript = () => {
     document.body.appendChild(script);
   });
 };
-
 
 const generateReference = () => {
   return `REF_${Date.now()}_${Math.floor(Math.random() * 100000)}`;
@@ -66,15 +66,15 @@ export const initiatePaystackPayment = async (setView, setCart) => {
             const result = await res.json();
 
             if (result.success) {
-              setView("payment");
+              SuccessModal.show();
               sessionStorage.clear();
               setCart({});
-              showSuccess(result.message || "Payment successful");
-            } else {
-              showError(result.message || "Verification failed.");
+              setTimeout(() => setView("shop"), 1500);
+            }else {
+          showError(result.message || "Verification failed.");
             }
-          } catch {
-            showError("Could not verify payment.");
+          } catch (error) {
+            showError("Could not verify the payment");
           }
         })();
       },
@@ -82,6 +82,6 @@ export const initiatePaystackPayment = async (setView, setCart) => {
 
     handler.openIframe();
   } catch (error) {
-    showError("Unable to initiate  Payment.");
+    showError("Unable to initiate payment");
   }
 };
