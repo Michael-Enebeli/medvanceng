@@ -355,12 +355,12 @@
   transition: all 0.3s ease;
 }
 
-.next-btn:enabled:hover {
+#pharmacy .next-btn:enabled:hover {
   background-color: var(--main);
   transform: scale(1.05);
 }
 
-.next-btn:disabled {
+#pharmacy .next-btn:disabled {
   opacity: 0.5;
   font-weight: bold;
   cursor: not-allowed;
